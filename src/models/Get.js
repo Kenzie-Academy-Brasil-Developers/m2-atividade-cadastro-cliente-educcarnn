@@ -5,7 +5,7 @@ const listaClientes  = document.querySelector("ul")
 
 class Get {
     static templateClientes(item){
-  
+
         item.forEach(({nome,cpf, idade,data_nasc,sexo,email,endereco,telefone_fixo, pedidos})=>{
             const {cep,rua,numero,bairro,cidade,estado} = endereco
          
@@ -38,3 +38,5 @@ class Get {
 }
 
 Get.templateClientes(clientes)
+
+
