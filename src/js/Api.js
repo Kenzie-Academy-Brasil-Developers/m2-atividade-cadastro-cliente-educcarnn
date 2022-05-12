@@ -12,7 +12,6 @@ class Api {
     static async cadastrarCliente(data){
 
     }
-
     static async editarCliente(id, data){
         const URL = "https://atividade-api-clientes.herokuapp.com/clientes/"
 

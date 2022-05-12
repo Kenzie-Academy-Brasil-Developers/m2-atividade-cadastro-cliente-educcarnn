@@ -17,29 +17,50 @@ class Patch {
     }
 */
     static AllDates(){
-         
-        clientes.forEach(({nome, id}) => {
+        clientes.forEach(({nome}) => {
             const select = document.querySelector('#buscarCliente')
         
             const option = document.createElement('option')
             option.innerText = nome
 
-            option.value = id
             select.appendChild(option)
         })
 
     }
 
-    static preencher(){
-        clientes.forEach(() => {
+    static Preencher(){
+    
+    const firstForm = document.querySelector('#firstDados')
+    const selectSpread = [...firstForm]
+    const secondForm = document.querySelector('#secondDados')
+
+    const secondSpread = [...secondForm]
+
+        clientes.forEach(({nome, data_nasc, sexo, email}) => {
+            const {masculino, feminino} = sexo
+    
+            const selector = document.querySelector('#buscarCliente').value
+            if(selector === nome) {
+                selectSpread[0].value = nome
+                selectSpread[1].value = data_nasc
+                selectSpread[2].value = masculino || feminino
+                selectSpread[3].value = email
+            }
+        
 
         })
+
+
+
     }
 }
 
 
+const value = document.querySelector('#inputCliente')
+value.addEventListener('click', Patch.Preencher)
 
 Patch.AllDates()
+
 /*
 const inputBtn = document.querySelector('#inputCliente')
 inputBtn.addEventListener('click', Patch.AllDates)
