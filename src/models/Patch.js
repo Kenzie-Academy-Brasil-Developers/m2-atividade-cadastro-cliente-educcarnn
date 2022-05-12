@@ -1,19 +1,21 @@
 import { Api } from "../js/Api.js";
 
 const clientes = await Api.listarClientes()
-const select = document.querySelector('button')
 
-console.log(select)
+
 
 class Patch {
-    static metodo(item) {
+    static metodo(elem) {
+        elem.forEach(({nome}) => {
+            const select = document.querySelector('#buscarCliente')
+        
+            const option = document.createElement('option')
+            option.innerText = nome
 
-        item.forEach(() => {
-
+            select.appendChild(option)
         })
-
     }
 }
-
-Api.editarCliente(Patch.metodo())
+Patch.metodo(clientes)
+Api.editarCliente()
 
