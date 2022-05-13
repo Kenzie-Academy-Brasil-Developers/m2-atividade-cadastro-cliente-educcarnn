@@ -31,12 +31,13 @@
         <form action="#" id='firstDados'>
 
             <input type="text" name="nome" value="">
-            <input name="data_nasc" value="">
+            <input type="date" data_nasc" value="">
             <select name="sexo" id="sexo">
                 <option>Masculino</option>
                 <option>Feminino</option>
             </select>
             <input type="email" name="email" value="">
+            <input type="text" id="validation" value="">
         </form>
         
         <form action="#" id='secondDados'>
@@ -77,17 +78,19 @@
                 <option value="TO">Tocantins</option>
                 <option value="EX">Estrangeiro</option>
             </select>
+            <input type="text" id="secondValidation" value="">
             <hr>
         </form>
             
         <form action="" id="telForm">
             <h3>Cadastrar Contato:</h3>
             <input type="tel" name="telefone_fixo" value="">
+            <input type="text" value="" id="idTel">
 
-            <button>Editar</button>
+            <button id='edit'>Editar</button>
         </form>
 
- 
+        <script type="module" src="../models/Popular.js"></script>
         <script type="module" src="../models/Patch.js"></script>
         <script type="module" src="/src/js/script.js"></script>
 </body>
