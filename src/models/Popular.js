@@ -2,6 +2,7 @@ import { Api } from "../js/Api.js";
 const clientes = await Api.listarClientes()
 
 const validation = document.querySelector('#validation')
+const secondValidation = document.querySelector('#secondValidation')
 const firstForm = document.querySelector('#firstDados')
 const genero = document.querySelector('#sexo')
 const selectSpread = [...firstForm]
@@ -11,6 +12,7 @@ const secondSpread = [...secondForm]
 
 const telSpread = document.querySelector('#telForm')
 const tel = [...telSpread]
+const idTel = document.querySelector('#idTel')
 
 class Popular {
     static AllDates() {
@@ -34,8 +36,12 @@ class Popular {
             const selector = document.querySelector('#buscarCliente').value
             if (selector === nome) {
                 validation.innerHTML = ''
+                
                 validation.value = id
-    
+                secondValidation.innerHTML = ''
+                secondValidation.value = id
+                idTel.innerHTML = ''
+                idTel.value = id
                 selectSpread[0].value = nome
                 //selectSpread[0].id = id
                 selectSpread[1].value = data_nasc
@@ -49,7 +55,9 @@ class Popular {
                 secondSpread[4].value = cidade
                 secondSpread[5].value = estado
     
+    
                 tel[0].value = telefone_fixo
+                
             }
         })
     }

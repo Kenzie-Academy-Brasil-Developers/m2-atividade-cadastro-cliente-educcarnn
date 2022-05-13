@@ -3,6 +3,7 @@ import { Api } from "../js/Api.js";
 const clientes = await Api.listarClientes()
 
 const validation = document.querySelector('#validation')
+const secondValidation = document.querySelector('#secondValidation')
 const firstForm = document.querySelector('#firstDados')
 const genero = document.querySelector('#sexo')
 const selectSpread = [...firstForm]
@@ -11,6 +12,7 @@ const secondForm = document.querySelector('#secondDados')
 const secondSpread = [...secondForm]
 
 const telSpread = document.querySelector('#telForm')
+const idTel = document.querySelector('#idTel')
 const tel = [...telSpread]
 
 class Patch {
@@ -32,7 +34,33 @@ static Verify() {
                 if(email !== selectSpread[3].value) {
                     Api.editarCliente(id, {email: selectSpread[3].value})
                 }
-                
+          }
+        
+          if(id === Number(secondValidation.value)){
+              if(cep !== secondSpread[0].value) {
+                    Api.editarCliente(id, {cep: secondSpread[0].value})
+              }
+              if(rua !== secondSpread[1].value) {
+                Api.editarCliente(id, {rua: secondSpread[1].value})
+              }
+              if(numero !== secondSpread[2].value) {
+                Api.editarCliente(id, {numero: secondSpread[2].value})
+              }
+              if(bairro !== secondSpread[3].value) {
+                  Api.editarCliente(id, {bairro: secondSpread[3].value})
+              }
+              if(estado !== secondSpread[4].value) {
+                  Api.editarCliente(id, {estado: secondSpread[4].value})
+              }
+              if(cidade !== secondSpread[5].value) {
+                  Api.editarCliente(id, {cidade: secondSpread[5].value})
+              }
+          }
+
+          if(id === Number(idTel.value)) {
+            if(telefone_fixo !== tel[0].value) {
+                Api.editarCliente(id, {telefone_fixo: tel[0].value})
+            }
           }
         
     })
