@@ -1,4 +1,3 @@
-
 class Prevent {
     static default(e) {
         e.preventDefault()
