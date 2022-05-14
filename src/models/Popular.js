@@ -16,7 +16,7 @@ const idTel = document.querySelector('#idTel')
 
 class Popular {
     static AllDates() {
-        clientes.forEach(({ nome, id}) => {
+        clientes.forEach(({nome}) => {
             const select = document.querySelector('#buscarCliente')
     
     
