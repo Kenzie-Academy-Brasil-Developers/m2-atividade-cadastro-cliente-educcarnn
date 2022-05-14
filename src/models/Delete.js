@@ -3,7 +3,6 @@ import { Api } from "../js/Api.js";
 const clientes = await Api.listarClientes()
 
 const form = document.querySelector('#buscarCliente')
-
 const btn = document.querySelector('#idBuscar')
 
 class Delete{
@@ -20,17 +19,12 @@ class Delete{
 
     static method() {
      
-        clientes.forEach(({nome, id}) => {
-            //console.log(id)
+        clientes.forEach(({id}) => {
             const idGeral = [...form.value]
-           
-            if(Number(idGeral) === id) {
-                console.log(Number(idGeral))
-                //Api.deletarCliente(id)
-            }
-           
-
             
+            if(Number(idGeral) === id) {
+                Api.deletarCliente(id)
+            }
           
         })
         
